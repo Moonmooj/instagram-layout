@@ -33,31 +33,37 @@
             crossorigin="anonymous"></script>
 </head>
 <style>
+    /*상단바 border*/
     .navbar {
         border-bottom: 1px solid lightgrey;
     }
 
+    /*상단바 메뉴정렬*/
     .main-menu {
         display: flex;
         margin: auto;
     }
 
+    /*상단바 인스타그램이미지정렬*/
     .main-img {
         margin-right: 240px;
         margin-left: 30px;
     }
 
+    /*상단바 아이콘정렬*/
     .icon {
         display: flex;
         margin-left: 100px;
     }
 
+    /*상단바 아이콘 및 피드 아이콘 정렬 및 포인터*/
     .material {
         margin-top: 5px;
         margin-left: 25px;
         cursor: pointer
     }
 
+    /*좌측피드 오른쪽피드 정렬*/
     .main-body {
         display: flex;
         justify-content: center;
@@ -65,6 +71,7 @@
         margin-right: 290px;
     }
 
+    /*좌측피드 정렬*/
     .left-body {
         /*background-color: skyblue;*/
         margin-right: 20px;
@@ -74,6 +81,7 @@
         flex-direction: column;
     }
 
+    /*피드상자배경 및 정렬 */
     .feed-box {
         background-color: white;
         width: 600px;
@@ -83,24 +91,30 @@
         height: 910px;
     }
 
+    /*피드이미지 크기 */
     .feed-img {
         width: 100%;
         height: 100%;
 
     }
 
+    /*피드내용 정렬 */
     .feed-content {
         padding: 0px 10px;
+        display: flex;
     }
 
+    /*피드내용 정렬 */
     .feed-text {
         font-size: 15px;
     }
 
+    /*좋아요 정렬*/
     .feed-like {
         padding: 0px 10px;
     }
 
+    /*댓글들 정렬*/
     .feed-reply {
         font-size: 15px;
         padding-left: 10px;
@@ -108,6 +122,7 @@
         flex-direction: column;
     }
 
+    /*피드아이콘 정렬*/
     .feed-icon {
         padding: 5px 5px 0px 5px;
         display: flex;
@@ -118,12 +133,14 @@
         padding-right: 5px;
     }
 
+    /*피드이름 정렬*/
     .feed-name {
         padding: 10px;
         display: flex;
         justify-content: space-between;
     }
 
+    /*피드내용이름 정렬*/
     .feed-name-text {
         font-size: 15px;
         padding: 0px 10px;
@@ -131,6 +148,7 @@
         cursor: pointer
     }
 
+    /*피드위 프로필박스 정렬*/
     .profile-box {
         width: 40px;
         height: 40px;
@@ -139,20 +157,24 @@
         cursor: pointer
     }
 
+    /*피드위 이미지 정렬*/
     .profile-img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
 
+    /*아이콘 호버시*/
     .material-feed {
         cursor: pointer
     }
 
+    /*댓창 정렬*/
     .comment {
         justify-content: space-between;
     }
 
+    /*우측피드 정렬*/
     .right-body {
         /*background-color: yellow;*/
         padding-top: 20px;
@@ -162,11 +184,13 @@
         position: fixed;
     }
 
+    /*이름 정렬*/
     .name-content {
         display: flex;
         flex-direction: column;
     }
 
+    /*이름 밑 내용 정렬*/
     .name-content-text {
         font-size: 12px;
         padding: 0px 10px;
@@ -178,6 +202,7 @@
         width: 190px;
     }
 
+    /*내 프로필사진 정렬*/
     .big-profile-box {
         width: 60px;
         height: 60px;
@@ -185,6 +210,7 @@
         overflow: hidden;
     }
 
+    /*팔로우/전환텍스트 설정*/
     .link-text {
         font-size: 14px;
         font-weight: bold;
@@ -192,6 +218,7 @@
         text-decoration: none;
     }
 
+    /*회원님을 위한 추천 설정*/
     .recommend-box {
         display: flex;
         justify-content: space-between;
@@ -201,6 +228,7 @@
         align-items: center;
     }
 
+    /*피드 더보기버튼 설정*/
     .comment-box {
         margin: 30px 0px 0px 5px;
         font-size: 12px;
@@ -210,38 +238,69 @@
         flex-direction: column;
     }
 
+    /*피드 이미지크기 설정*/
     .carousel-item {
         height: 600px;
         width: 600px;
     }
 
+    /*피드위 이미지 이름 ... 설정*/
     .profile-bar {
         display: flex;
         align-items: center;
+    }
+
+    /*피드내용 더보기 설정*/
+    .feed-text-more {
+        border: none;
+        background-color: transparent;
+        color: var(--gray);
+        font-size: 14px;
+        cursor: pointer;
+
+    }
+
+    /*미디어쿼리 설정*/
+    @media screen and (max-width: 1000px) {
+        .right-body {
+            display: none;
+        }
+
+        .form-control {
+            display: none;
+        }
+
+        .left-body {
+            margin-left: 360px;
+        }
     }
 </style>
 <script>
 
 </script>
-<body style="background-color: #f0f0f2;">
+<!--body 색 지정-->
+<body class="bodies" style="background-color: #f0f0f2;">
 <!-- 네비게이션바 시작-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light"
      style="width: 100%; height: 60px; position: fixed; z-index: 99;">
     <div class="container-fluid">
+        <!--        // 좌측상단 인스타그램 이미지 클릭시 새로고침-->
         <div class="main-menu">
             <img class="main-img" style="object-fit: contain; cursor:pointer"
                  src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
                  onclick="window.location.reload()">
+            <!--            // 검색창기능 설정-->
             <input class="form-control me-2"
                    style="width: 265px; height: 35px; background-color: #f0f0f2;margin-right: 10px  "
                    type="search" placeholder="검색" aria-label="Search">
+            <!--            // 우측상단 아이콘-->
             <div class="icon">
                 <span class="material material-symbols-outlined">home</span>
                 <span class="material material-symbols-outlined">near_me</span>
                 <span class="material material-icons-outlined">add_box</span>
                 <span class="material material-icons-outlined">explore</span>
                 <span class="material material-icons-outlined">favorite_border</span>
-                <span class="material"><img class="profile-img"
+                <span class="material" onclick="window.location.href='detail.html'"><img class="profile-img"
                                             style="width: 25px; height: 25px;border-radius: 70%; overflow: hidden; margin-bottom: 5px;"
                                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYpbowW30Eqd3-vKmmnJ-BwV3cGUAlAyP0CTsIi8NQlK5rOHB1wUQGGG0ZQraedyi0ql4&usqp=CAU"></span>
             </div>
@@ -251,6 +310,7 @@
 <!-- 네비게이션바 끝-->
 <!-- 바디 영역-->
 <div class="main-body">
+    <!-- 좌측 피드영역-->
     <div class="left-body">
         <div class="border feed-box">
             <div class="feed-name">
@@ -262,6 +322,7 @@
                     <span class="feed-name-text"> m_nvely </span>
                 </div>
                 <div>
+                    <!-- 피드박스 우측상단 ...버튼-->
                     <div class="dotdotdot">
                         <button type="button"
                                 style="margin: auto; color: black; height: 30px; background-color: transparent; border: 0px;"
@@ -304,7 +365,8 @@
                 </div>
             </div>
             <div>
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <!--                 carousel 기능 / carousel 자동넘김멈춤기능-->
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img class="feed-img"
@@ -331,6 +393,7 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
+                <!--                피드 아이콘-->
                 <div class="feed-icon">
                     <div>
                         <span class="material-feed material-icons-outlined">favorite_border</span>
@@ -344,8 +407,10 @@
                 <div class="feed-like">
                     <p style="font-size: 14px"><b>좋아요 10개</b></p>
                 </div>
+                <!--                피드내용이하-->
                 <div class="feed-content">
-                    <p class="feed-text"><b> m_vely </b> 강아지 귀엽쥬? 🐶❤️</p>
+                    <span class="feed-text" style="overflow:hidden; overflow:clip"><b> m_vely </b> 강아지 귀엽쥬? 🐶❤</span>
+                    <div class="feed-text-more">더 보기</div>
                 </div>
                 <div class="feed-reply">
                     <p style="color: gray; cursor: pointer; margin-bottom: 10px"> 댓글 1000개 모두 보기</p>
@@ -417,7 +482,7 @@
                 </div>
             </div>
             <div>
-                <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel" data-interval="false">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img class="feed-img"
@@ -459,6 +524,7 @@
                 </div>
                 <div class="feed-content">
                     <p class="feed-text"><b> m_vely </b> 강아지 귀엽쥬? 🐶❤️</p>
+                    <div class="feed-text-more">더 보기</div>
                 </div>
                 <div class="feed-reply">
                     <p style="color: gray; cursor: pointer; margin-bottom: 10px"> 댓글 1000개 모두 보기</p>
@@ -530,7 +596,7 @@
                 </div>
             </div>
             <div>
-                <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel" data-interval="false">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img class="feed-img"
@@ -572,6 +638,7 @@
                 </div>
                 <div class="feed-content">
                     <p class="feed-text"><b> m_vely </b> 강아지 귀엽쥬? 🐶❤️</p>
+                    <div class="feed-text-more">더 보기</div>
                 </div>
                 <div class="feed-reply">
                     <p style="color: gray; cursor: pointer; margin-bottom: 10px"> 댓글 1000개 모두 보기</p>
@@ -643,7 +710,7 @@
                 </div>
             </div>
             <div>
-                <div id="carouselExampleControls3" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleControls3" class="carousel slide" data-ride="carousel" data-interval="false">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img class="feed-img"
@@ -685,6 +752,7 @@
                 </div>
                 <div class="feed-content">
                     <p class="feed-text"><b> m_vely </b> 강아지 귀엽쥬? 🐶❤️</p>
+                    <div class="feed-text-more">더 보기</div>
                 </div>
                 <div class="feed-reply">
                     <p style="color: gray; cursor: pointer; margin-bottom: 10px"> 댓글 1000개 모두 보기</p>
